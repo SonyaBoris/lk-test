@@ -59,11 +59,11 @@ export const About = () => {
         <div className="flex s:gap-[124px] gap-2 s:flex-row flex-col">
           <div className="flex flex-col gap-2">
             <p className="text-s text-tertiary-text">Название проекта</p>
-            <p className="text-s text-primary-text">MedPoint 24</p>
+            <p className="text-s text-primary-text">{user.project.name}</p>
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-s text-tertiary-text">Тип проекта</p>
-            <p className="text-s text-primary-text">Коммерческий</p>
+            <p className="text-s text-primary-text">{user.project.type}</p>
           </div>
         </div>
         <div className="flex s:gap-[78px] gap-2 s:flex-row flex-col">
@@ -71,27 +71,27 @@ export const About = () => {
             <p className="text-s text-tertiary-text">Ответствеенный</p>
             <div className="flex items-center gap-2">
               <img src={avatar} />
-              <p className="text-s text-primary-text">Анна Кузнецова</p>
+              <p className="text-s text-primary-text ">{user.project.lead}</p>
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-s text-tertiary-text">Команда</p>
-            <div className=" flex gap-[-12px]">
-              {mokTeam.map((e) => (
-                <Team key={e.id} index={e.id} />
+            <div className=" flex gap-[-12px] w-[293px]">
+              {user.project.team.slice(0, 7).map((e) => (
+                <Team key={e.id} />
               ))}
               <button
                 onClick={() => setIsOpenTeamModal(true)}
-                className="text-primary-text text-xl">+3</button>
+                className="text-primary-text text-xl">+{user.project.team.length - 7}</button>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-2 text-primary-text">
           <p className="text-s text-tertiary-text">Сроки работы</p>
           <div className="flex gap-2 items-center">
-            <p className="text-s ">03 марта 2023</p>
+            <p className="text-s ">{user.project.dateStart}</p>
             <Arrow color={"#0047BB"} />
-            <p className="text-s ">23 марта 2023</p>
+            <p className="text-s ">{user.project.dateEnd}</p>
           </div>
 
         </div>

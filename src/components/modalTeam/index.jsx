@@ -1,13 +1,8 @@
 import exit from "../../assets/img/exit.svg"
 import { Modal } from "../../ui/modal";
-import user from "../../assets/img/moc-user-1.png"
+import avatar from "../../assets/img/moc-user-1.png"
+import {user} from "../../data/user"
 
-const mokTeam = [
-  { id: 1, name: "John Smith", job: "Junior UI/UX designer" },
-  { id: 2, name: "John Smith", job: "Junior UI/UX designer" },
-  { id: 3, name: "John Smith", job: "Junior UI/UX designer" },
-  { id: 4, name: "John Smith", job: "Junior UI/UX designer" }
-]
 
 export const ModalTeam = ({ closeModal, isOpenModal }) => {
 
@@ -21,12 +16,12 @@ export const ModalTeam = ({ closeModal, isOpenModal }) => {
           </button>
         </div>
         <div className="flex flex-col gap-4">
-          {mokTeam.map((e) =>
+          {user.project.team.map((e) =>
             <div className="flex gap-2 text-primary-text">
-              <img src={user} />
+              <img src={avatar} />
               <div>
                 <p>{e.name}</p>
-                <p className="text-sm">{e.job}</p>
+                <p className="text-sm text-secondary-text">{e.job}</p>
               </div>
             </div>
           )}

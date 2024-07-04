@@ -1,6 +1,9 @@
 import user from "../../assets/img/moc-user-1.png"
-export const Team = ({index}) => {
+export const Team = () => {
   return (
-    <img src={user} />
+    <div className="border-2 rounded-full border-secondary-bg [&:not(:first-child)]:-ml-3">
+        <img src={user} />
+    </div>
+  
   );
 }
