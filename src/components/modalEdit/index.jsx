@@ -3,20 +3,21 @@ import { useForm } from "react-hook-form";
 import { Button } from "../../ui/button";
 import { BaseInput } from "../../ui/input";
 import { Modal } from "../../ui/modal";
+import {user} from "../../data/user"
 
 export const ModalEdit = ({ closeModal, isOpenModal }) => {
 
   const { register, handleSubmit, formState } = useForm({
     defaultValues: {
-      "name": "bob",
-      "lastName": "bobic",
-      "fatherName": "sasasa",
-      "dateBorn": '2000-01-01',
-      "dateWork": '2024-01-01',
-      "countries": "Russia",
-      "town": "moscow",
-      "job": "uxui",
-      "mail": "sasa@gmail.com"
+      name: user.name,
+      lastName: user.lastName,
+      fatherName: user.fatherName,
+      dateBorn:  user.dateBorn,
+      dateWork:  user.dateWork,
+      countries:  user.countries,
+      town:  user.town,
+      job:  user.job,
+      mail:  user.mail
     },
     mode: "onChange",
   });
